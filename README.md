@@ -4,7 +4,7 @@ Nanodegree Project 3 : A Maze for VR
 
 #Commitments in this Project
 * Improve my github profile
-* 
+* Create a menu where the box are rotating if they are pointed.
 * 
 * 
 * 
