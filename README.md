@@ -3,7 +3,7 @@ Nanodegree Project 3 : A Maze for VR
 
 
 #Commitments in this Project
-* 
+* Improve my github profile
 * 
 * 
 * 
