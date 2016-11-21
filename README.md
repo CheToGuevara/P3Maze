@@ -6,8 +6,8 @@ Nanodegree Project 3 : A Maze for VR
 * Improve my github profile
 * Create a menu where the box are rotating if they are pointed.
 * Create a scene with a maze with the palace
-* 
-* 
+* Create a key model 
+* Define the waypoint path for the user
 * 
 * 
 
