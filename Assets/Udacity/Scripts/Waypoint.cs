@@ -114,18 +114,21 @@ public class Waypoint : MonoBehaviour
 
 	public void Enter()
 	{
+		Debug.Log ("Enter");
 		_state = _state == State.Idle ? State.Focused : _state;
 	}
 
 
 	public void Exit()
 	{
+		Debug.Log ("Exit");
 		_state = State.Idle;
 	}
 
 
 	public void Click()
 	{
+		Debug.Log ("Click");
 		_state = _state == State.Focused ? State.Clicked : _state;
 		
 		_audio_source.Play();
