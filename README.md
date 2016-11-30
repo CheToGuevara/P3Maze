@@ -8,7 +8,8 @@ Nanodegree Project 3 : A Maze for VR
 * Create a scene with a maze with the palace
 * Create a key model 
 * Define the waypoint path for the user
-* 
+* At the end, the camera goes up
+* Create collectable coins
 * 
 
 #Comments to the submit
