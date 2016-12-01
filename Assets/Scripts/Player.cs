@@ -7,6 +7,9 @@ public class Player : MonoBehaviour {
 	bool key_found = false;
 	int coins = 0;
 
+	[Header("Text")]
+	public ChangeText _walltext;
+
 	[Header("Speed travel")]
 	[Range(0.0001f,1)] public float speed		=0.0001f;
 
@@ -19,6 +22,7 @@ public class Player : MonoBehaviour {
 	public void set_key(bool found)
 	{
 		key_found = found;
+		UpdateWall ();
 	}
 
 	public bool get_key()
@@ -29,11 +33,16 @@ public class Player : MonoBehaviour {
 	public void add_coin()
 	{
 		coins++;
+		UpdateWall ();
 	}
 
 	public int get_coins()
 	{
 		return coins;
+	}
+
+	void UpdateWall(){
+		_walltext.UpdateText (coins, 1);
 	}
 
 	void OnTriggerEnter(Collider other) {
