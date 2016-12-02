@@ -10,7 +10,7 @@ Nanodegree Project 3 : A Maze for VR
 * Define the waypoint path for the user
 * At the end, the camera goes up
 * Create collectable coins
-* 
+* Create a wall text to show the score
 
 #Comments to the submit
 
