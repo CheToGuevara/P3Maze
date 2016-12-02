@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-	bool key_found = false;
+	int key_found = 0;
 	int coins = 0;
 
 	[Header("Text")]
@@ -19,13 +19,13 @@ public class Player : MonoBehaviour {
 	private bool 		_ending					= false;
 	private float 		_deltaTime 				= 0.0f;
 
-	public void set_key(bool found)
+	public void set_key()
 	{
-		key_found = found;
+		key_found++;
 		UpdateWall ();
 	}
 
-	public bool get_key()
+	public int get_key()
 	{
 		return key_found;
 	}
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void UpdateWall(){
-		_walltext.UpdateText (coins, 1);
+		_walltext.UpdateText (coins, key_found);
 	}
 
 	void OnTriggerEnter(Collider other) {

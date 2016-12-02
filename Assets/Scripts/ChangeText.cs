@@ -10,7 +10,7 @@ public class ChangeText : MonoBehaviour {
 
 		_textmesh = GetComponent<TextMesh> ();
 		_textmesh.richText = true;
-		_textmesh.text = "Coins: 0 <br> Key: 0";
+		_textmesh.text = "Coins: 0 \nKey: 0 \nDoor Close";
 	
 	}
 	
@@ -22,7 +22,7 @@ public class ChangeText : MonoBehaviour {
 	public void UpdateText(int coins, int key)
 	{
 		string _text = string.Concat ("Coins: ", coins.ToString (),
-			               "<br> Key: ", key.ToString ());
+			"\n Key: ", key.ToString (), "\n Door",(key>0)?"Open":"Close");
 		_textmesh.text = _text;
 	}
 }

@@ -4,19 +4,54 @@ using UnityEngine;
 
 public class Key : MonoBehaviour 
 {
-    //Create a reference to the KeyPoofPrefab and Door
+	bool looking= false;
+	private AudioSource _audio_source			= null;
 
-	void Update()
+
+	[Header("Sounds")]
+	public AudioClip clip_click					= null;	
+
+
+	void Start()
 	{
-		//Bonus: Key Animation
+		_audio_source				= gameObject.GetComponent<AudioSource>();	
+		_audio_source.clip		 	= clip_click;
+		_audio_source.playOnAwake 	= false;
 	}
 
-	public void OnKeyClicked()
+	void Update () {
+		if (looking)
+		{
+
+			this.transform.Rotate(1,1,0);
+		}
+	}
+
+
+	public void OnKeyClicked() {
+		// Instantiate the CoinPoof Prefab where this coin is located
+		// Make sure the poof animates vertically
+		// Destroy this coin. Check the Unity documentation on how to use Destroy
+		Player m_player = Camera.main.GetComponent<Player>();
+		_audio_source.Play();
+		if (m_player)
+			m_player.set_key ();
+
+
+		gameObject.transform.localScale 									= Vector3.zero ;
+	}
+
+
+	public void onPointEnter()
 	{
-        // Instatiate the KeyPoof Prefab where this key is located
-        // Make sure the poof animates vertically
-        // Call the Unlock() method on the Door
-        // Destroy the key. Check the Unity documentation on how to use Destroy
-    }
+
+		looking = true;
+	}
+
+	public void onPointExit()
+	{
+
+		looking = false;
+	}
 
 }
