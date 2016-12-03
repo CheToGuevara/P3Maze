@@ -8,4 +8,9 @@ public class SignPost : MonoBehaviour
 	{
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
+
+	public void FinishScene() 
+	{
+		SceneManager.LoadScene (0);
+	}
 }
