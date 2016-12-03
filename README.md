@@ -11,6 +11,7 @@ Nanodegree Project 3 : A Maze for VR
 * At the end, the camera goes up
 * Create collectable coins
 * Create a wall text to show the score
+* Restart sign
 
 #Comments to the submit
 
