@@ -73,7 +73,7 @@ public class CustomWaypoint : MonoBehaviour
 
 	void Update()
 	{
-		bool occupied 	= (gameObject.transform.position - Camera.main.transform.position ).sqrMagnitude < (speed*speed);
+		bool occupied 	= ((gameObject.transform.position - Camera.main.transform.position ).sqrMagnitude < (speed*speed));
 		
 		switch(_state)
 		{
@@ -94,14 +94,20 @@ public class CustomWaypoint : MonoBehaviour
 				_state 		= scaled ? State.Approaching : _state;
 				break;
 
-			case State.Approaching:
-				Hide();	
-				_deltaTime += speed;
-				Camera.main.transform.position = Vector3.Lerp (_origin,_destiny,_deltaTime);
+		case State.Approaching:
+			Hide ();	
+			_deltaTime += speed;
+			Camera.main.transform.position = Vector3.Lerp (_origin, _destiny, _deltaTime);
+			if (_deltaTime > 1)
+				occupied = true;
 				_state 		= occupied ? State.Occupied : _state;
+
+				
+				
 				break;
 		case State.Occupied:
-				Hide ();
+			Hide ();
+			_deltaTime = 0;
 				lerp_hide = 1;
 				_state = !occupied ? State.Idle : _state;
 				break;

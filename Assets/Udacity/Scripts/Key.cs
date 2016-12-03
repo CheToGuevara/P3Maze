@@ -11,6 +11,9 @@ public class Key : MonoBehaviour
 	[Header("Sounds")]
 	public AudioClip clip_click					= null;	
 
+	[Header("Effects")]
+	public GameObject poofobject				= null;	
+
 
 	void Start()
 	{
@@ -37,7 +40,7 @@ public class Key : MonoBehaviour
 		if (m_player)
 			m_player.set_key ();
 
-
+		Instantiate (poofobject, this.transform.position,Quaternion.identity);
 		gameObject.transform.localScale 									= Vector3.zero ;
 	}
 

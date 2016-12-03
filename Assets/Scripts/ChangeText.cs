@@ -22,7 +22,7 @@ public class ChangeText : MonoBehaviour {
 	public void UpdateText(int coins, int key)
 	{
 		string _text = string.Concat ("Coins: ", coins.ToString (),
-			"\n Key: ", key.ToString (), "\n Door",(key>0)?"Open":"Close");
+			"\n Key: ", key.ToString (), "\n Door ",(key>0)?"Open":"Close");
 		_textmesh.text = _text;
 	}
 }

@@ -13,6 +13,9 @@ public class Coin : MonoBehaviour
 	[Header("Sounds")]
 	public AudioClip clip_click					= null;	
 
+	[Header("Effects")]
+	public GameObject poofobject				= null;	
+
 
 	void Start()
 	{
@@ -39,8 +42,9 @@ public class Coin : MonoBehaviour
 		if (m_player)
 			m_player.add_coin ();
 
-
+		Instantiate (poofobject, this.transform.position,Quaternion.identity);
 		gameObject.transform.localScale 									= Vector3.zero ;
+
     }
 
 
